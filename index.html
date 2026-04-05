@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avinash T. | Connectivity Hub</title>
+    <title>Avinash T. | Tech & Math Hub</title>
     <link rel="icon" href="https://fav.farm/⚡" />
     <style>
-        /* Base Design - Light, Vibrant, Airy */
+        /* Base Design - Dark, Technical, Precise */
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            /* Vibrant "Sunrise Ocean" Gradient */
-            background: linear-gradient(135deg, #e0f7fa 0%, #00d2ff 60%, #ffffff 100%);
-            color: #1a1a2e; /* Dark, legible text for light background */
+            font-family: 'Segoe UI', 'SF Mono', monospace;
+            /* Dark Navy with a subtle Math Grid pattern */
+            background-color: #0a0a12;
+            background-image: 
+                linear-gradient(rgba(0, 210, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 210, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px; /* This creates the coordinate grid */
+            color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -24,165 +28,157 @@
         .profile-container {
             text-align: center;
             margin-bottom: 30px;
-            max-width: 300px;
+            z-index: 1;
         }
 
-        /* Profile Image Slot with "Live" Status Dot */
         .profile-image-wrapper {
             position: relative;
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 15px;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
         }
 
         .profile-pic {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 3px solid #00acc1; /* Vibrant blue-green border */
+            border: 2px solid #00d2ff;
             object-fit: cover;
-            display: block;
-            background: #ffffff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: #1a1a2e;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
         }
 
-        /* The "Live" Status Dot (Vibrant Green) */
         .status-dot {
             position: absolute;
-            bottom: 5px;
-            right: 5px;
+            bottom: 8px;
+            right: 8px;
             width: 14px;
             height: 14px;
-            background-color: #00e676; /* Vibrant lime green */
+            background-color: #00ff88;
             border-radius: 50%;
-            border: 2px solid #e0f7fa;
-            box-shadow: 0 0 10px #00e676;
-            animation: pulse 2.5s infinite;
+            border: 3px solid #0a0a12;
+            box-shadow: 0 0 15px #00ff88;
+            animation: pulse 2s infinite;
         }
 
         h1 {
             margin: 0;
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #1a1a2e;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
         }
 
         .username {
-            color: #00acc1; /* Matching accent color */
-            font-size: 14px;
+            color: #00d2ff;
+            font-size: 13px;
             margin-top: 5px;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-family: 'Courier New', monospace;
+            opacity: 0.8;
         }
 
-        /* Modern Interest Badges */
+        /* Tech Interest Badges */
         .bio-grid {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 12px;
+            margin-top: 20px;
         }
 
         .bio-item {
-            background: rgba(0, 172, 193, 0.1);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 700;
-            border: 1px solid rgba(0, 172, 193, 0.2);
-            color: #1a1a2e;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .bio-item span {
-            color: #00acc1;
-            font-size: 16px;
+            background: rgba(0, 210, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 4px; /* Sharper corners for a tech look */
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            color: #00d2ff;
+            text-transform: uppercase;
         }
 
         .bio-text {
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 14px;
-            color: #546e7a; /* Softer text color for readability */
-            line-height: 1.5;
-            font-weight: 500;
+            color: #94a3b8;
+            max-width: 320px;
+            line-height: 1.6;
         }
 
-        /* The Social Cards Container */
+        /* Technical Link Cards */
         .links-container {
             width: 100%;
-            max-width: 350px;
+            max-width: 360px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
-        /* The "Glassmorphism" Boxes (Updated for Light BG) */
         .card {
-            background: rgba(255, 255, 255, 0.4); /* Dropped from 0.6 to 0.4 */
-            backdrop-filter: blur(15px); /* Increased blur for a frostier look */
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 18px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px;
+            border-radius: 8px;
             text-decoration: none;
-            color: #1a1a2e;
-            text-align: center;
-            font-size: 18px;
-            font-weight: 700;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); /* Softer shadow */
-        }
-        /* Hover Animation - Precise & Bold */
-        .card:hover {
-            background: #00d2ff; /* Vibrant background on hover */
-            color: #ffffff; /* Contrast text on hover */
-            transform: translateY(-5px) scale(1.01);
-            border-color: #00d2ff;
-            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.2);
+            color: #ffffff;
+            text-align: left; /* Alignment change for a "list" feel */
+            padding-left: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
         }
 
-        /* "Daily Math Fact" (Updated Footer for Light BG) */
+        /* Tech Hover Effect */
+        .card:hover {
+            background: rgba(0, 210, 255, 0.1);
+            border-color: #00d2ff;
+            transform: translateX(10px); /* Slides right on hover */
+            color: #00d2ff;
+        }
+
+        .card::before {
+            content: '>';
+            position: absolute;
+            left: 10px;
+            color: #00d2ff;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        /* Math Fact Footer */
         .math-fact-container {
-            margin-top: 40px;
+            margin-top: 50px;
             padding: 20px;
             width: 100%;
-            max-width: 350px;
-            background: rgba(0, 172, 193, 0.05);
-            border-radius: 15px;
-            text-align: center;
-            border-top: 1px solid rgba(0, 172, 193, 0.1);
+            max-width: 360px;
+            border-left: 2px solid #00d2ff;
+            background: rgba(0, 210, 255, 0.02);
         }
 
         .math-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #00acc1;
-            margin-bottom: 8px;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: #00d2ff;
+            margin-bottom: 10px;
             font-weight: bold;
         }
 
         .math-text {
-            font-size: 14px;
-            color: #546e7a;
-            font-style: italic;
-            line-height: 1.5;
+            font-size: 13px;
+            color: #64748b;
+            font-family: 'Courier New', monospace;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        @media (max-width: 480px) {
-            .links-container {
-                width: 95%;
-            }
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
         }
     </style>
 </head>
@@ -194,56 +190,46 @@
             <div class="status-dot"></div>
         </div>
         
-        <h1>Avinash T.</h1>
-        <div class="username">@avinasht.connect</div>
+        <h1>AVINASH T.</h1>
+        <div class="username">SYSTEM_OPERATOR // @avinasht.connect</div>
         
         <div class="bio-grid">
-            <div class="bio-item"><span>💻</span> Tech</div>
-            <div class="bio-item"><span>&sum;</span> Math</div>
-            <div class="bio-item"><span>👥</span> Friends</div>
+            <div class="bio-item">Tech</div>
+            <div class="bio-item">Math (∫)</div>
+            <div class="bio-item">Social</div>
         </div>
         
         <div class="bio-text">
-            ⚡ Tech head living in high-res. Building digital tools, solving for $x$, and always down for a hang. Hit the boxes below to reach me instantly. 
+            Executing digital workflows. Solving for precision. Connecting with the network. 
         </div>
     </div>
 
     <div class="links-container">
-        <a href="https://instagram.com/avinasht.connect" target="_blank" class="card">
-            Instagram
-        </a>
-
-        <a href="https://wa.me/919744721833" target="_blank" class="card">
-            WhatsApp
-        </a>
-
-        <a href="https://github.com/NewLifeCodder" target="_blank" class="card">
-            GitHub
-        </a>
+        <a href="https://instagram.com/avinasht.connect" target="_blank" class="card">INSTAGRAM</a>
+        <a href="https://wa.me/919744721833" target="_blank" class="card">WHATSAPP</a>
+        <a href="https://github.com/NewLifeCodder" target="_blank" class="card">GITHUB_PROFILE</a>
     </div>
 
     <div class="math-fact-container">
-        <div class="math-label">∑ Daily Math Fact</div>
-        <div id="math-fact-text" class="math-text">Loading precision data...</div>
+        <div class="math-label">[MATH_LOG_RANDOM]</div>
+        <div id="math-fact-text" class="math-text">Initializing fact...</div>
     </div>
 
     <script>
         const mathFacts = [
-            "A 'Jiffy' is an actual unit of time: 1/100th of a second.",
-            "Sunflowers spirals follow the Fibonacci sequence: 1, 1, 2, 3, 5...",
-            "A 'googol' is the number 1 followed by 100 zeros.",
-            "Roman numerals have no representation for the number zero.",
-            "The ancient Old Norse word 'hundred' (hundrath) actually meant 120.",
-            "Shuffling a deck of cards creates an order likely never seen before in history.",
-            "Multiplying 111,111,111 by 111,111,111 gives 12,345,678,987,654,321."
+            "A 'Jiffy' is 1/100th of a second.",
+            "Nature follows Fibonacci: 1, 1, 2, 3, 5, 8...",
+            "A 'googol' = 10^100.",
+            "Roman numerals have no symbol for zero.",
+            "111,111,111^2 = 12,345,678,987,654,321.",
+            "The sum of angles in a triangle is always 180°.",
+            "Euler's Identity: e^(iπ) + 1 = 0."
         ];
 
         function getRandomFact() {
             const randomIndex = Math.floor(Math.random() * mathFacts.length);
             document.getElementById('math-fact-text').innerText = mathFacts[randomIndex];
         }
-
-        // Run on page load
         window.onload = getRandomFact;
     </script>
 
