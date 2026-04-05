@@ -3,104 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avinash Connect</title>
+    <title>Avinash T. | Connectivity Hub</title>
     <link rel="icon" href="https://fav.farm/⚡" />
     <style>
-        .math-fact-container {
-            margin-top: 40px;
-            padding: 15px;
-            width: 100%;
-            max-width: 350px;
-            background: rgba(255, 255, 255, 0.03);
-            border-top: 1px solid rgba(0, 210, 255, 0.2);
-            border-radius: 0 0 15px 15px;
-            text-align: center;
-        }
-
-        .math-label {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #00d2ff;
-            margin-bottom: 8px;
-        }
-
-        .math-text {
-            font-size: 13px;
-            color: #bdc3c7;
-            font-style: italic;
-            line-height: 1.4;
-        }
-        .bio-grid {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .bio-item {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .bio-text {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #bdc3c7;
-            line-height: 1.4;
-        }
-        
-        /* Making the math symbol look cool */
-        .bio-item span {
-            color: #00d2ff;
-        }
-        .profile-image-wrapper {
-            position: relative;
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px;
-        }
-
-        .profile-pic {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 2px solid #00d2ff;
-            object-fit: cover;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
-        }
-
-        /* The "Live" Status Dot */
-        .status-dot {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            width: 12px;
-            height: 12px;
-            background-color: #00ff88;
-            border-radius: 50%;
-            border: 2px solid #1a1a2e;
-            box-shadow: 0 0 10px #00ff88;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.7; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        /* Base Design */
+        /* Base Design - Light, Vibrant, Airy */
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #1a1a2e, #16213e);
-            color: white;
+            /* Vibrant "Sunrise Ocean" Gradient */
+            background: linear-gradient(135deg, #e0f7fa 0%, #00d2ff 60%, #ffffff 100%);
+            color: #1a1a2e; /* Dark, legible text for light background */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -116,16 +27,50 @@
             max-width: 300px;
         }
 
+        /* Profile Image Slot with "Live" Status Dot */
+        .profile-image-wrapper {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid #00acc1; /* Vibrant blue-green border */
+            object-fit: cover;
+            display: block;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* The "Live" Status Dot (Vibrant Green) */
+        .status-dot {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 14px;
+            height: 14px;
+            background-color: #00e676; /* Vibrant lime green */
+            border-radius: 50%;
+            border: 2px solid #e0f7fa;
+            box-shadow: 0 0 10px #00e676;
+            animation: pulse 2.5s infinite;
+        }
+
         h1 {
             margin: 0;
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            color: #1a1a2e;
         }
 
         .username {
-            color: #00d2ff;
+            color: #00acc1; /* Matching accent color */
             font-size: 14px;
             margin-top: 5px;
             font-family: 'Courier New', Courier, monospace;
@@ -133,13 +78,38 @@
             letter-spacing: 1px;
         }
 
-        /* Bio Styling */
-        .bio {
+        /* Modern Interest Badges */
+        .bio-grid {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
             margin-top: 15px;
-            font-size: 15px;
+        }
+
+        .bio-item {
+            background: rgba(0, 172, 193, 0.1);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid rgba(0, 172, 193, 0.2);
+            color: #1a1a2e;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .bio-item span {
+            color: #00acc1;
+            font-size: 16px;
+        }
+
+        .bio-text {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #546e7a; /* Softer text color for readability */
             line-height: 1.5;
-            color: #bdc3c7;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         /* The Social Cards Container */
@@ -151,31 +121,65 @@
             gap: 15px;
         }
 
-        /* The Individual Boxes */
+        /* The "Glassmorphism" Boxes (Updated for Light BG) */
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             padding: 18px;
             border-radius: 12px;
             text-decoration: none;
-            color: white;
+            color: #1a1a2e;
             text-align: center;
-            font-size: 17px;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 700;
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
-        /* Hover Animation */
+        /* Hover Animation - Precise & Bold */
         .card:hover {
-            background: rgba(0, 210, 255, 0.15); /* Subtle blue glow background */
-            transform: translateY(-5px) scale(1.02);
+            background: #00d2ff; /* Vibrant background on hover */
+            color: #ffffff; /* Contrast text on hover */
+            transform: translateY(-5px) scale(1.01);
             border-color: #00d2ff;
-            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
-            color: #00d2ff;
-            letter-spacing: 1px; /* Text expands slightly when hovered */
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.2);
         }
+
+        /* "Daily Math Fact" (Updated Footer for Light BG) */
+        .math-fact-container {
+            margin-top: 40px;
+            padding: 20px;
+            width: 100%;
+            max-width: 350px;
+            background: rgba(0, 172, 193, 0.05);
+            border-radius: 15px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 172, 193, 0.1);
+        }
+
+        .math-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00acc1;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .math-text {
+            font-size: 14px;
+            color: #546e7a;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
         @media (max-width: 480px) {
             .links-container {
                 width: 95%;
@@ -187,12 +191,12 @@
 
     <div class="profile-container">
         <div class="profile-image-wrapper">
-            <img src="https://github.com/NewLifeCodder.png" alt="Avinash T" class="profile-pic">
+            <img src="https://i.ibb.co/hZz0k0V/newlifecodder-avatar.png" alt="Avinash T" class="profile-pic">
             <div class="status-dot"></div>
         </div>
         
         <h1>Avinash T.</h1>
-        <div class="username">@avinasht.connect</div>
+        <div class="username">@NewLifeCodder</div>
         
         <div class="bio-grid">
             <div class="bio-item"><span>💻</span> Tech</div>
@@ -201,8 +205,7 @@
         </div>
         
         <div class="bio-text">
-            Building digital tools, solving for $x$, and always down for a hang. 
-            Tap a box to connect!
+            ⚡ Tech head living in high-res. Building digital tools, solving for $x$, and always down for a hang. Hit the boxes below to reach me instantly. 
         </div>
     </div>
 
@@ -219,20 +222,20 @@
             GitHub
         </a>
     </div>
+
     <div class="math-fact-container">
         <div class="math-label">∑ Daily Math Fact</div>
         <div id="math-fact-text" class="math-text">Loading precision data...</div>
     </div>
 
-</body>
     <script>
         const mathFacts = [
             "A 'Jiffy' is an actual unit of time: 1/100th of a second.",
-            "The spiral shapes of sunflowers follow the Fibonacci sequence.",
+            "Sunflowers spirals follow the Fibonacci sequence: 1, 1, 2, 3, 5...",
             "A 'googol' is the number 1 followed by 100 zeros.",
-            "Zero is the only number that can't be represented in Roman numerals.",
-            "The word 'hundred' comes from the Old Norse word 'hundrath', which actually means 120.",
-            "If you shuffle a deck of cards, that specific order has likely never existed before in history.",
+            "Roman numerals have no representation for the number zero.",
+            "The ancient Old Norse word 'hundred' (hundrath) actually meant 120.",
+            "Shuffling a deck of cards creates an order likely never seen before in history.",
             "Multiplying 111,111,111 by 111,111,111 gives 12,345,678,987,654,321."
         ];
 
@@ -241,7 +244,9 @@
             document.getElementById('math-fact-text').innerText = mathFacts[randomIndex];
         }
 
-        // Run the function when the page loads
+        // Run on page load
         window.onload = getRandomFact;
     </script>
+
+</body>
 </html>
