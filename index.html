@@ -1,10 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Avinash's Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avinash Connect</title>
+    <style>
+        /* Base Design */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #1a1a2e, #16213e);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .profile-container {
+            text-align: center;
+            margin-bottom: 30px;
+            max-width: 300px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .username {
+            color: #00d2ff;
+            font-size: 14px;
+            margin-top: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Bio Styling */
+        .bio {
+            margin-top: 15px;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #bdc3c7;
+            font-weight: 400;
+        }
+
+        /* The Social Cards Container */
+        .links-container {
+            width: 100%;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* The Individual Boxes */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-size: 17px;
+            font-weight: 600;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hover Animation */
+        .card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-4px);
+            border-color: #00d2ff;
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.3);
+            color: #00d2ff;
+        }
+
+        @media (max-width: 480px) {
+            .links-container {
+                width: 95%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This is my first website hosted on Cloudflare.</p>
+
+    <div class="profile-container">
+        <h1>Avinash T.</h1>
+        <div class="username">avinasht.connect</div>
+        <div class="bio">
+            Tech enthusiast with an eye for precision. Exploring digital spaces and high-accuracy gear.
+        </div>
+    </div>
+
+    <div class="links-container">
+        <a href="https://instagram.com/avinasht.connect" target="_blank" class="card">
+            Instagram
+        </a>
+
+        <a href="https://wa.me/919744721833" target="_blank" class="card">
+            WhatsApp
+        </a>
+
+        <a href="https://github.com/avinasht-connect" target="_blank" class="card">
+            GitHub
+        </a>
+    </div>
+
 </body>
 </html>
