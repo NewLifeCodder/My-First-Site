@@ -123,9 +123,9 @@
 
         /* The "Glassmorphism" Boxes (Updated for Light BG) */
         .card {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.4); /* Dropped from 0.6 to 0.4 */
+            backdrop-filter: blur(15px); /* Increased blur for a frostier look */
+            border: 1px solid rgba(255, 255, 255, 0.3);
             padding: 18px;
             border-radius: 12px;
             text-decoration: none;
@@ -134,9 +134,8 @@
             font-size: 18px;
             font-weight: 700;
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); /* Softer shadow */
         }
-
         /* Hover Animation - Precise & Bold */
         .card:hover {
             background: #00d2ff; /* Vibrant background on hover */
@@ -201,7 +200,7 @@
         <div class="bio-grid">
             <div class="bio-item"><span>💻</span> Tech</div>
             <div class="bio-item"><span>&sum;</span> Math</div>
-            <div class="bio-item"><span>👥;</span> Friends</div>
+            <div class="bio-item"><span>👥</span> Friends</div>
         </div>
         
         <div class="bio-text">
