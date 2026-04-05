@@ -6,6 +6,61 @@
     <title>Avinash Connect</title>
     <link rel="icon" href="https://fav.farm/⚡" />
     <style>
+        .math-fact-container {
+            margin-top: 40px;
+            padding: 15px;
+            width: 100%;
+            max-width: 350px;
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(0, 210, 255, 0.2);
+            border-radius: 0 0 15px 15px;
+            text-align: center;
+        }
+
+        .math-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00d2ff;
+            margin-bottom: 8px;
+        }
+
+        .math-text {
+            font-size: 13px;
+            color: #bdc3c7;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        .bio-grid {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .bio-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .bio-text {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #bdc3c7;
+            line-height: 1.4;
+        }
+        
+        /* Making the math symbol look cool */
+        .bio-item span {
+            color: #00d2ff;
+        }
         .profile-image-wrapper {
             position: relative;
             width: 100px;
@@ -137,11 +192,17 @@
         </div>
         
         <h1>Avinash T.</h1>
-        <div class="username">@avinasht.connect</div>
+        <div class="username">@NewLifeCodder</div>
         
-        <div class="bio">
-            ⚡ Just a tech head living in high-res. <br>
-            Hit the boxes below to reach me instantly. 
+        <div class="bio-grid">
+            <div class="bio-item"><span>💻</span> Tech</div>
+            <div class="bio-item"><span>&sum;</span> Math</div>
+            <div class="bio-item"><span>&9786;</span> Friends</div>
+        </div>
+        
+        <div class="bio-text">
+            Building digital tools, solving for $x$, and always down for a hang. 
+            Tap a box to connect!
         </div>
     </div>
 
@@ -158,6 +219,29 @@
             GitHub
         </a>
     </div>
+    <div class="math-fact-container">
+        <div class="math-label">∑ Daily Math Fact</div>
+        <div id="math-fact-text" class="math-text">Loading precision data...</div>
+    </div>
 
 </body>
+    <script>
+        const mathFacts = [
+            "A 'Jiffy' is an actual unit of time: 1/100th of a second.",
+            "The spiral shapes of sunflowers follow the Fibonacci sequence.",
+            "A 'googol' is the number 1 followed by 100 zeros.",
+            "Zero is the only number that can't be represented in Roman numerals.",
+            "The word 'hundred' comes from the Old Norse word 'hundrath', which actually means 120.",
+            "If you shuffle a deck of cards, that specific order has likely never existed before in history.",
+            "Multiplying 111,111,111 by 111,111,111 gives 12,345,678,987,654,321."
+        ];
+
+        function getRandomFact() {
+            const randomIndex = Math.floor(Math.random() * mathFacts.length);
+            document.getElementById('math-fact-text').innerText = mathFacts[randomIndex];
+        }
+
+        // Run the function when the page loads
+        window.onload = getRandomFact;
+    </script>
 </html>
