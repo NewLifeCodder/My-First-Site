@@ -36,27 +36,18 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'SF Mono', monospace;
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            background-color: var(--bg-color);
-            transition: all 0.4s ease;
-            
-            /* Combined Background: Math Grid + Neon Mesh */
-            background-image: 
-                linear-gradient(var(--grid-line) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
-                radial-gradient(at 0% 0%, hsla(197, 100%, 49%, 0.1) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, hsla(280, 100%, 50%, 0.1) 0px, transparent 50%);
-            background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
-            animation: scan 10s linear infinite;
-        }
+    /* ... other styles ... */
+    background-image: 
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+        radial-gradient(at 0% 0%, hsla(197, 100%, 49%, 0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, hsla(280, 100%, 50%, 0.1) 0px, transparent 50%);
+    
+    /* Match the sizes specifically to the layers */
+    background-size: 40px 40px, 40px 40px, cover, cover;
+    background-attachment: fixed; /* Keeps the neon glow from moving when scrolling */
+    animation: scan 20s linear infinite; /* Slowed down to 20s for a smoother feel */
+}
 
         /* Theme Toggle Button */
         .theme-switch {
