@@ -23,31 +23,43 @@
             --text-primary: #1a1a2e;
             --text-secondary: #475569;
             --accent-color: #0077ff;
-            --grid-line: rgba(0, 119, 255, 0.12);
-            --card-bg: rgba(0, 0, 0, 0.04);
+            --grid-line: rgba(0, 119, 255, 0.15);
+            --card-bg: rgba(0, 0, 0, 0.05);
             --status-green: #00ad5d;
             --shadow-color: rgba(0, 119, 255, 0.2);
         }
 
         /* Base Body & Background Animation */
         @keyframes scan {
-            from { background-position: 0px 0px, 0px 0px, center; }
-            to { background-position: 40px 40px, 40px 40px, center; }
+            from { background-position: 0px 0px, 0px 0px, center, center; }
+            to { background-position: 40px 40px, 40px 40px, center, center; }
         }
 
         body {
-    /* ... other styles ... */
-    background-image: 
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
-        radial-gradient(at 0% 0%, hsla(197, 100%, 49%, 0.1) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, hsla(280, 100%, 50%, 0.1) 0px, transparent 50%);
-    
-    /* Match the sizes specifically to the layers */
-    background-size: 40px 40px, 40px 40px, cover, cover;
-    background-attachment: fixed; /* Keeps the neon glow from moving when scrolling */
-    animation: scan 20s linear infinite; /* Slowed down to 20s for a smoother feel */
-}
+            font-family: 'Segoe UI', 'SF Mono', monospace;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+            transition: background 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+            
+            /* Layered Background: Grid (Animate) + Glow (Fixed) */
+            background-image: 
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+                radial-gradient(at 0% 0%, hsla(197, 100%, 49%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(280, 100%, 50%, 0.1) 0px, transparent 50%);
+            
+            background-size: 40px 40px, 40px 40px, cover, cover;
+            background-attachment: fixed; 
+            animation: scan 20s linear infinite;
+        }
 
         /* Theme Toggle Button */
         .theme-switch {
@@ -124,7 +136,6 @@
             letter-spacing: 2px;
         }
 
-        /* Interest Badges */
         .bio-grid {
             display: flex;
             justify-content: center;
@@ -181,7 +192,6 @@
             color: var(--accent-color);
         }
 
-        /* Math Log Fact Container */
         .math-fact-container {
             margin-top: 50px;
             padding: 15px;
@@ -197,7 +207,6 @@
             color: var(--accent-color);
             margin-bottom: 8px;
             font-weight: bold;
-            opacity: 0.8;
         }
 
         .math-text {
@@ -252,7 +261,7 @@
         const mathFacts = [
             "A 'Jiffy' is 1/100th of a second.",
             "Nature follows Fibonacci: 1, 1, 2, 3, 5, 8...",
-            "A 'googol' is 10 to the power of 100.",
+            "A 'googol' is 10^100.",
             "Roman numerals have no symbol for zero.",
             "111,111,111^2 = 12,345,678,987,654,321.",
             "Euler's Identity: e^(iπ) + 1 = 0.",
