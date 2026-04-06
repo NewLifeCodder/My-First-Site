@@ -6,29 +6,36 @@
     <title>Avinash T. | Tech & Math Hub</title>
     <link rel="icon" href="https://fav.farm/⚡" />
     <style>
-        /* Base Design - Dark, Technical, Precise */
+        /* Base Design - Neon, Cybernetic, Technical */
         body {
             font-family: 'Segoe UI', 'SF Mono', monospace;
-            /* Dark Navy with a subtle Math Grid pattern */
-            background-color: #0a0a12;
-            background-image: 
-                linear-gradient(rgba(0, 210, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 210, 255, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px; /* This creates the coordinate grid */
-            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            color: #ffffff;
+            
+            /* NEON MESH GRADIENT BACKGROUND */
+            background-color: #05050a;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(197, 100%, 49%, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(280, 100%, 50%, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(190, 100%, 50%, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(200, 100%, 50%, 0.1) 0px, transparent 50%);
+            
+            /* Subtler Math Grid for a cleaner Tech look */
+            background-image: 
+                linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
         .profile-container {
             text-align: center;
             margin-bottom: 30px;
-            z-index: 1;
         }
 
         .profile-image-wrapper {
@@ -44,8 +51,9 @@
             border-radius: 50%;
             border: 2px solid #00d2ff;
             object-fit: cover;
-            background: #1a1a2e;
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+            background: #0a0a12;
+            /* Neon Outer Glow */
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.5), inset 0 0 10px rgba(0, 210, 255, 0.2);
         }
 
         .status-dot {
@@ -56,7 +64,7 @@
             height: 14px;
             background-color: #00ff88;
             border-radius: 50%;
-            border: 3px solid #0a0a12;
+            border: 3px solid #05050a;
             box-shadow: 0 0 15px #00ff88;
             animation: pulse 2s infinite;
         }
@@ -65,20 +73,20 @@
             margin: 0;
             font-size: 28px;
             font-weight: 800;
-            letter-spacing: 2px;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(0, 210, 255, 0.7);
         }
 
         .username {
             color: #00d2ff;
-            font-size: 13px;
-            margin-top: 5px;
+            font-size: 12px;
+            margin-top: 8px;
             font-family: 'Courier New', monospace;
-            opacity: 0.8;
+            letter-spacing: 2px;
+            opacity: 0.9;
         }
 
-        /* Tech Interest Badges */
+        /* Interest Badges */
         .bio-grid {
             display: flex;
             justify-content: center;
@@ -87,14 +95,15 @@
         }
 
         .bio-item {
-            background: rgba(0, 210, 255, 0.1);
-            padding: 5px 15px;
-            border-radius: 4px; /* Sharper corners for a tech look */
-            font-size: 12px;
-            font-weight: 600;
-            border: 1px solid rgba(0, 210, 255, 0.3);
+            background: rgba(0, 210, 255, 0.05);
+            padding: 4px 12px;
+            border-radius: 2px;
+            font-size: 11px;
+            font-weight: bold;
+            border: 1px solid rgba(0, 210, 255, 0.4);
             color: #00d2ff;
             text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
         }
 
         .bio-text {
@@ -105,7 +114,7 @@
             line-height: 1.6;
         }
 
-        /* Technical Link Cards */
+        /* Neon Link Cards */
         .links-container {
             width: 100%;
             max-width: 360px;
@@ -115,58 +124,47 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 210, 255, 0.2);
             padding: 16px;
-            border-radius: 8px;
+            border-radius: 4px;
             text-decoration: none;
             color: #ffffff;
-            text-align: left; /* Alignment change for a "list" feel */
-            padding-left: 25px;
-            font-size: 16px;
-            font-weight: 500;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
-            transition: all 0.3s ease;
             overflow: hidden;
         }
 
-        /* Tech Hover Effect */
+        /* The Neon Pulse Hover */
         .card:hover {
             background: rgba(0, 210, 255, 0.1);
             border-color: #00d2ff;
-            transform: translateX(10px); /* Slides right on hover */
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
             color: #00d2ff;
         }
 
-        .card::before {
-            content: '>';
-            position: absolute;
-            left: 10px;
-            color: #00d2ff;
-            opacity: 0;
-            transition: 0.3s;
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        /* Math Fact Footer */
+        /* Math Fact Container - Technical Sidebar Style */
         .math-fact-container {
             margin-top: 50px;
-            padding: 20px;
+            padding: 15px;
             width: 100%;
-            max-width: 360px;
-            border-left: 2px solid #00d2ff;
-            background: rgba(0, 210, 255, 0.02);
+            max-width: 340px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 210, 255, 0.1);
         }
 
         .math-label {
             font-size: 10px;
-            letter-spacing: 3px;
             color: #00d2ff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: bold;
+            opacity: 0.7;
         }
 
         .math-text {
@@ -176,9 +174,9 @@
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
         }
     </style>
 </head>
