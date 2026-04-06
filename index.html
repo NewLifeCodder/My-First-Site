@@ -49,7 +49,6 @@
             transition: background 0.4s ease, color 0.4s ease;
             overflow-x: hidden;
             
-            /* Layered Background: Grid (Animate) + Glow (Fixed) */
             background-image: 
                 linear-gradient(var(--grid-line) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
@@ -203,16 +202,30 @@
         }
 
         .math-label {
+            display: flex;
+            justify-content: space-between;
             font-size: 10px;
             color: var(--accent-color);
             margin-bottom: 8px;
             font-weight: bold;
         }
 
+        .refresh-btn {
+            cursor: pointer;
+            text-decoration: underline;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .refresh-btn:hover {
+            opacity: 1;
+        }
+
         .math-text {
             font-size: 13px;
             color: var(--text-secondary);
             font-family: 'Courier New', monospace;
+            min-height: 2.4em; /* Prevents layout jump */
         }
 
         @keyframes pulse {
@@ -252,13 +265,13 @@
         <a href="https://github.com/NewLifeCodder" target="_blank" class="card">GITHUB_PROFILE</a>
     </div>
 
-   <div class="math-fact-container">
-    <div class="math-label">
-        [SYSTEM_LOG_MATH] 
-        <span onclick="getRandomFact()" style="cursor:pointer; margin-left:10px; text-decoration:underline;">[REFRESH]</span>
+    <div class="math-fact-container">
+        <div class="math-label">
+            <span>[SYSTEM_LOG_MATH]</span>
+            <span class="refresh-btn" onclick="getRandomFact()">[REFRESH]</span>
+        </div>
+        <div id="math-fact-text" class="math-text">Fetching data...</div>
     </div>
-    <div id="math-fact-text" class="math-text">Fetching data...</div>
-</div>
 
     <script>
        const mathFacts = [
@@ -277,21 +290,14 @@
             "The first website (1991) is still online today.",
             "The number 0 was first used in India by Brahmagupta.",
             "The '@' symbol was chosen for email in 1971.",
-            "A 'Nibble' is exactly 4 bits, or half of a Byte.",
             "The first computer mouse was made of wood in 1964.",
             "The sum of all numbers on a Roulette wheel is 666.",
-            "Python is named after 'Monty Python', not the snake.",
             "12,345,678,987,654,321 is the square of 111,111,111.",
-            "The first 1GB hard drive (1980) weighed 500 pounds.",
             "A 'googolplex' is 10 to the power of a googol.",
             "CAPTCHA stands for: Completely Automated Public Turing test.",
-            "Every odd number in English contains the letter 'e'.",
             "The first domain name ever registered was Symbolics.com.",
-            "The ‘@’ symbol was chosen for email in 1971.",
-            "A 'Jiffy' is a real unit of time: 1/100th of a second.",
             "The Fibonacci sequence appears in pinecones and sunflowers.",
             "Typewriter was the longest word you could type on one row.",
-            "Zero was first used as a number in ancient India.",
             "The first webcam was used to monitor a coffee pot.",
             "A 'Perfect Number' equals the sum of its divisors (like 6).",
             "Linux powers 100% of the world's top 500 supercomputers.",
@@ -300,18 +306,19 @@
         ];
 
         function getRandomFact() {
-    const textElement = document.getElementById('math-fact-text');
-    
-    // Brief fade out effect
-    textElement.style.opacity = 0;
-    
-    setTimeout(() => {
-        const randomIndex = Math.floor(Math.random() * mathFacts.length);
-        textElement.innerText = mathFacts[randomIndex];
-        textElement.style.transition = "opacity 0.3s";
-        textElement.style.opacity = 1;
-    }, 150);
-    }
+            const textElement = document.getElementById('math-fact-text');
+            
+            // Fade out
+            textElement.style.transition = "opacity 0.2s ease";
+            textElement.style.opacity = 0;
+            
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * mathFacts.length);
+                textElement.innerText = mathFacts[randomIndex];
+                // Fade in
+                textElement.style.opacity = 1;
+            }, 250);
+        }
 
         function toggleTheme() {
             const body = document.documentElement;
