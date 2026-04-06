@@ -252,10 +252,13 @@
         <a href="https://github.com/NewLifeCodder" target="_blank" class="card">GITHUB_PROFILE</a>
     </div>
 
-    <div class="math-fact-container">
-        <div class="math-label">[SYSTEM_LOG_MATH]</div>
-        <div id="math-fact-text" class="math-text">Fetching data...</div>
+   <div class="math-fact-container">
+    <div class="math-label">
+        [SYSTEM_LOG_MATH] 
+        <span onclick="getRandomFact()" style="cursor:pointer; margin-left:10px; text-decoration:underline;">[REFRESH]</span>
     </div>
+    <div id="math-fact-text" class="math-text">Fetching data...</div>
+</div>
 
     <script>
        const mathFacts = [
@@ -297,9 +300,18 @@
         ];
 
         function getRandomFact() {
-            const randomIndex = Math.floor(Math.random() * mathFacts.length);
-            document.getElementById('math-fact-text').innerText = mathFacts[randomIndex];
-        }
+    const textElement = document.getElementById('math-fact-text');
+    
+    // Brief fade out effect
+    textElement.style.opacity = 0;
+    
+    setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * mathFacts.length);
+        textElement.innerText = mathFacts[randomIndex];
+        textElement.style.transition = "opacity 0.3s";
+        textElement.style.opacity = 1;
+    }, 150);
+    }
 
         function toggleTheme() {
             const body = document.documentElement;
