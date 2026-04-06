@@ -6,6 +6,10 @@
     <title>Avinash T. | Tech & Math Hub</title>
     <link rel="icon" href="https://fav.farm/⚡" />
     <style>
+        .card:active, .refresh-btn:active {
+            transform: scale(0.98);
+            opacity: 0.8;
+        }
         /* CSS Variables for Mode Toggle */
         :root {
             --bg-color: #05050a;
@@ -225,9 +229,10 @@
             font-size: 13px;
             color: var(--text-secondary);
             font-family: 'Courier New', monospace;
-            min-height: 2.4em; /* Prevents layout jump */
+            min-height: 2.4em;
+            /* Add this for a subtle glow */
+            text-shadow: 0 0 5px var(--shadow-color);
         }
-
         @keyframes pulse {
             0% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.2); opacity: 0.7; }
