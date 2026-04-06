@@ -17,18 +17,20 @@
             align-items: center;
             justify-content: center;
             color: #ffffff;
-            background-color: #05050a;
             
-            /* Combined Background: Grid sits on top of the Mesh Gradient */
+            /* NEON MESH GRADIENT BACKGROUND */
+            background-color: #05050a;
             background-image: 
-                linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px),
                 radial-gradient(at 0% 0%, hsla(197, 100%, 49%, 0.15) 0px, transparent 50%),
                 radial-gradient(at 100% 0%, hsla(280, 100%, 50%, 0.15) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, hsla(190, 100%, 50%, 0.15) 0px, transparent 50%),
                 radial-gradient(at 0% 100%, hsla(200, 100%, 50%, 0.1) 0px, transparent 50%);
             
-            background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+            /* Subtler Math Grid for a cleaner Tech look */
+            background-image: 
+                linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
         .profile-container {
