@@ -284,7 +284,6 @@
     <div class="links-container">
         <a href="https://instagram.com/avinasht.connect" target="_blank" class="card">INSTAGRAM</a>
         <a href="https://wa.me/919744721833" target="_blank" class="card">WHATSAPP</a>
-        <a href="https://github.com/NewLifeCodder" target="_blank" class="card">GITHUB_PROFILE</a>
     </div>
 
     <div class="math-fact-container">
@@ -331,21 +330,16 @@
 
         function getRandomFact() {
             const textElement = document.getElementById('math-fact-text');
-            
-            // Fade out
             textElement.style.opacity = 0;
             
             setTimeout(() => {
                 let randomIndex;
-                // Ensure we don't show the same fact twice in a row
                 do {
                     randomIndex = Math.floor(Math.random() * mathFacts.length);
                 } while (randomIndex === lastIndex);
                 
                 lastIndex = randomIndex;
                 textElement.innerText = mathFacts[randomIndex];
-                
-                // Fade in
                 textElement.style.opacity = 1;
             }, 250);
         }
@@ -364,7 +358,6 @@
             }
         }
 
-        // Initialize first fact
         window.onload = getRandomFact;
     </script>
 
