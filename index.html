@@ -6,10 +6,6 @@
     <title>Avinash T. | Tech & Math Hub</title>
     <link rel="icon" href="https://fav.farm/⚡" />
     <style>
-        .card:active, .refresh-btn:active {
-            transform: scale(0.98);
-            opacity: 0.8;
-        }
         /* CSS Variables for Mode Toggle */
         :root {
             --bg-color: #05050a;
@@ -61,7 +57,7 @@
             
             background-size: 40px 40px, 40px 40px, cover, cover;
             background-attachment: fixed; 
-            animation: scan 20s linear infinite;
+            animation: scan 30s linear infinite;
         }
 
         /* Theme Toggle Button */
@@ -85,6 +81,10 @@
         .theme-switch:hover {
             background: var(--accent-color);
             color: var(--bg-color);
+        }
+
+        .theme-switch:active {
+            transform: scale(0.95);
         }
 
         /* Profile Section */
@@ -195,6 +195,11 @@
             color: var(--accent-color);
         }
 
+        .card:active {
+            transform: scale(0.98);
+        }
+
+        /* Math Fact Terminal Section */
         .math-fact-container {
             margin-top: 50px;
             padding: 15px;
@@ -230,9 +235,21 @@
             color: var(--text-secondary);
             font-family: 'Courier New', monospace;
             min-height: 2.4em;
-            /* Add this for a subtle glow */
             text-shadow: 0 0 5px var(--shadow-color);
+            transition: opacity 0.25s ease;
         }
+
+        .math-text::after {
+            content: "_";
+            animation: cursor-blink 1s infinite;
+            color: var(--accent-color);
+        }
+
+        @keyframes cursor-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
         @keyframes pulse {
             0% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.2); opacity: 0.7; }
@@ -279,7 +296,7 @@
     </div>
 
     <script>
-       const mathFacts = [
+        const mathFacts = [
             "The first computer 'bug' was a real moth found in a relay.",
             "Binary (0 and 1) was invented by Gottfried Leibniz in 1679.",
             "A 'Nibble' is exactly 4 bits, or half a Byte.",
@@ -310,16 +327,24 @@
             "The first website (1991) is still live at info.cern.ch."
         ];
 
+        let lastIndex = -1;
+
         function getRandomFact() {
             const textElement = document.getElementById('math-fact-text');
             
             // Fade out
-            textElement.style.transition = "opacity 0.2s ease";
             textElement.style.opacity = 0;
             
             setTimeout(() => {
-                const randomIndex = Math.floor(Math.random() * mathFacts.length);
+                let randomIndex;
+                // Ensure we don't show the same fact twice in a row
+                do {
+                    randomIndex = Math.floor(Math.random() * mathFacts.length);
+                } while (randomIndex === lastIndex);
+                
+                lastIndex = randomIndex;
                 textElement.innerText = mathFacts[randomIndex];
+                
                 // Fade in
                 textElement.style.opacity = 1;
             }, 250);
@@ -339,6 +364,7 @@
             }
         }
 
+        // Initialize first fact
         window.onload = getRandomFact;
     </script>
 
